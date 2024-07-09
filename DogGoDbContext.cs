@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using DogGo.Models;
 
+namespace DogGo.Data;
 public class DogGoDbContext : DbContext
 {
     private readonly IConfiguration _configuration;
