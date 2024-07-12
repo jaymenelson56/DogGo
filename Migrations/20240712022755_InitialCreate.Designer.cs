@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DogGo.Migrations
 {
     [DbContext(typeof(DogGoDbContext))]
-    [Migration("20240709174040_InitialCreate")]
+    [Migration("20240712022755_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
