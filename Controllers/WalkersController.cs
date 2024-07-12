@@ -20,10 +20,10 @@ namespace DogGo.Controllers
         }
 
         // GET: Walkers
-        public async Task<IActionResult> Index()
+        public  IActionResult Index()
         {
-            var dogGoDbContext = _context.Walkers.Include(w => w.Neighborhood);
-            return View(await dogGoDbContext.ToListAsync());
+             List<Walker> walkers = _context.Walkers.Include(w => w.Neighborhood).ToList();
+            return View(walkers);
         }
 
         // GET: Walkers/Details/5
@@ -34,7 +34,7 @@ namespace DogGo.Controllers
                 return NotFound();
             }
 
-            var walker = await _context.Walkers
+            Walker walker = await _context.Walkers
                 .Include(w => w.Neighborhood)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (walker == null)
